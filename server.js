@@ -2,19 +2,10 @@ var express = require('express');
 var app = express();
 //capital letter means constant in Javascript
 var PORT = 3000;
-var middleWare = {
-  requireAuthentication: function(req, res, next){
-     console.log(req.method);
-  },
-  logg: function(req, res, next){
-
-    console.log(new Date().toString() + req.method + ' ' + req.originalUrl);
-    next();
-  }
-};
+var middleware = require('./middleware.js');
 
 
-app.get('/about',middleWare.logg, function(req, res){
+app.get('/about',middleware.logger, function(req, res){
    res.send('About us!!');
 });
 
