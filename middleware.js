@@ -1,5 +1,3 @@
-module.exports=middleware;
-
 var middleware = {
 	 requireAuthentication: function(req, res, next){
      console.log(req.method);
@@ -9,3 +7,5 @@ var middleware = {
     next();
   }
 }
+
+module.exports=middleware;

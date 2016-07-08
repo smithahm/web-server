@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
-//capital letter means constant in Javascript
-var PORT = 3000;
-var middleware = require('./middleware.js');
 
+//capital letter means constant in Javascript
+var PORT = process.env.PORT || 3000;
+var middleware = require('./middleware.js');
 
 app.get('/about',middleware.logger, function(req, res){
    res.send('About us!!');
